@@ -14,7 +14,7 @@ private:
 
 	map<string, Room*> exits;
 	string exitString();
-    vector <Item> itemsInRoom;
+
 
 
 public:
@@ -34,6 +34,7 @@ public:
     Item findItem(Item item);
     bool allItemsCollected();
     bool containsExit(string exit);
+    vector <Item> itemsInRoom;
 };
 
 #endif

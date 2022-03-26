@@ -17,14 +17,14 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>330</y>
+      <x>110</x>
+      <y>420</y>
       <width>83</width>
       <height>29</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>South</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -37,20 +37,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>West</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>420</y>
+      <x>110</x>
+      <y>330</y>
       <width>83</width>
       <height>29</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>North</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
@@ -63,7 +63,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>East</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
@@ -76,7 +76,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Teleport</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">
@@ -89,7 +89,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Status</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
@@ -102,7 +102,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Help</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit">
@@ -148,7 +148,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Room Items</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
@@ -161,7 +161,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Inventory</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit_2">
