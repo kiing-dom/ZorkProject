@@ -6,25 +6,25 @@
 #include <iostream>
 using namespace std;
 
-class Item {
+class Item{
 private:
-	string description;
-	string longDescription;
-	int weightGrams;
-	float value;
-	bool weaponCheck;
+    string description;
+    string longDescription;
+    int weightGrams;
+    float value;
 
 public:
-    Item (string description, int inWeight, float inValue);
-    Item (string description);
-	string getShortDescription();
+    Item();
+    Item(string description, int weightGrams, float value);
+    Item(string description);
+    //Item operator==(const Item& i);
+    string getShortDescription();
+    bool operator==(Item &i);
     string getLongDescription();
-	int getWeight();
-	void setWeight(int weightGrams);
-	float getValue();
-	void setValue(float value);
-	int getWeaponCheck();
-	void setWeaponCheck(int weaponCheck);
+    int getWeight();
+    void setWeight(int inWeightGrams);
+    float getValue();
+    void setValue(float inValue);
 };
 
 #endif /*ITEM_H_*/
