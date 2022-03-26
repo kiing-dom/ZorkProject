@@ -93,7 +93,7 @@ string ZorkUL::go(string direction) {
     }
 }
 string ZorkUL::viewItems() {
-    return currentRoom->displayItems();
+    return currentRoom->displayItem();
 }
 Room ZorkUL::getCurrentRoom() {
     return *currentRoom;
