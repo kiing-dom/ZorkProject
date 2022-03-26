@@ -2,26 +2,52 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QPushButton>
+#include <QListWidget>
+#include "ZorkUL.h"
+#include "Character.h"
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+    class MainWindow;
+}
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    friend class Character;
+    friend class Room;
 
-private slots:
-    void on_pushButton_clicked();
+public:
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+    void overencumberedTest();
+    void allRoomItemsCollectedTest();
+    void disableAllButtons();
+    void addItemsToListWidget(vector<Item> item);
+    string displayStamina();
+    string displayHealth();
+    void printCharacterStats();
+    void endGameState(string message1, string message2);
 
 private:
     Ui::MainWindow *ui;
-    QPushButton *push_button2;
+    ZorkUL *zork = new ZorkUL();
+    Character character = *new Character("Durgrax");
+    bool putInInventory;
+    void goRoom(string direction);
+    void listItems(vector<Item> items, QString description);
 
+private slots:
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_3_clicked();
+    void on_pushButton_4_clicked();
+    void on_pushButton_5_clicked();
+    void on_pushButton_7_clicked();
+    void on_pushButton_8_clicked();
+    void on_pushButton_6_clicked();
+    void on_pushButton_9_clicked();
+    void on_pushButton_10_clicked();
+    void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
 };
-#endif // MAINWINDOW_H
+
+#endif
