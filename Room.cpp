@@ -66,6 +66,43 @@ string Room::displayItem() {
 int Room::numberOfItems() {
     return itemsInRoom.size();
 }
+void Room::removeItem(Item item)
+{
+    int pos = 0;
+
+    for(unsigned int i = 0; i < (unsigned int)itemsInRoom.size(); i++){
+        if(itemsInRoom[i] == item)
+        {
+            pos = (int)i;
+            break;
+        }
+    }
+    itemsInRoom.erase(itemsInRoom.begin() + pos);
+}
+
+Item Room::findItem(Item item){
+    for(unsigned int i = 0; i < itemsInRoom.size(); i++){
+        if(itemsInRoom[i] == item)
+        {
+            return itemsInRoom[i];
+        }
+    }
+}
+
+bool Room::allItemsCollected(){
+    if(itemsInRoom.empty())
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+vector<Item> Room::viewItems()
+{
+    return itemsInRoom;
+}
 
 int Room::isItemInRoom(string inString)
 {
