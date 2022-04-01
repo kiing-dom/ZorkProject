@@ -12,19 +12,19 @@ class Room {
 
 private:
 
-	map<string, Room*> exits;
-	string exitString();
+    map<string, Room*> exits;
+    string exitString();
 
 
 
 public:
     string description;
     int numberOfItems();
-	Room(string description);
-	void setExits(Room *north, Room *east, Room *south, Room *west);
-	string shortDescription();
-	string longDescription();
-	Room* nextRoom(string direction);
+    Room(string description);
+    void setExits(Room *north, Room *east, Room *south, Room *west);
+    string shortDescription();
+    string longDescription();
+    Room* nextRoom(string direction);
     void addItem(Item *inItem);
     string displayItem();
     int isItemInRoom(string inString);

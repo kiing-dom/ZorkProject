@@ -5,7 +5,7 @@
 //#include "parser.h"
 #include "Room.h"
 #include "item.h"
-#include "weapon.h"
+#include "Weapon.h"
 #include <iostream>
 #include <string>
 #include <vector>

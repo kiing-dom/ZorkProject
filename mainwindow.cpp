@@ -193,7 +193,7 @@ void MainWindow::goRoom(string direction)
     }
     else
     {
-        endGameState("ran out of health", "lost");
+        endGameState("you ran out of health", "you lost");
     }
 }
 
@@ -237,7 +237,7 @@ void MainWindow::printCharacterStats()
 {
     if (!(character.health > 0))
     {
-        endGameState("run out of health", "lost");
+        endGameState("you ran out of health", " you lost");
     }
     else
     {

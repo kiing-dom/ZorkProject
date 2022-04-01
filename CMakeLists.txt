@@ -19,6 +19,22 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        Character.cpp
+        Character.h
+        Command.cpp
+        Command.h
+        CommandWords.cpp
+        CommandWords.h
+        item.cpp
+        item.h
+        Parser.cpp
+        Parser.h
+        Room.cpp
+        Room.h
+        Weapon.cpp
+        Weapon.h
+        ZorkUL.cpp
+        ZorkUL.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
