@@ -31,10 +31,14 @@ public:
 private:
     Ui::MainWindow *ui;
     ZorkUL *zork = new ZorkUL();
-    Character character = *new Character("Durgrax");
+    Character character = *new Character("Kiing");
     bool putInInventory;
     void goRoom(string direction);
     void listItems(vector<Item> items, QString description);
+    int attempts;
+    bool wordleWin;
+    string word;
+    QString wordle;
 
 private slots:
     void on_pushButton_clicked();
@@ -48,6 +52,7 @@ private slots:
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
+    void on_lineEdit_textChanged(const QString &arg1);
 };
 
 #endif

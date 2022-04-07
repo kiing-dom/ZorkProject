@@ -4,7 +4,7 @@
 Character::Character(string description){
     itemsInCharacter.empty();
     this->description = description;
-    stamina = 10;
+    stamina = 5;
     health = 5;
 }
 
@@ -31,21 +31,7 @@ string Character::longDescription()
 {
     string output = "";
 
-    output += this->description;
-    output += "\n  ________   ";
-    output += "\n  |  |    |  |   ";
-    output += "\n  |   ___    |   ";
-    output += "\n  _______   ";
-    output += "\n------|------";
-    output += "\n        |      ";
-    output += "\n        |      ";
-    output += "\n        |      ";
-    output += "\n        |      ";
-    output += "\n    __|__    ";
-    output += "\n    |       |    ";
-    output += "\n    |       |    ";
-    output += "\n    |       |    ";
-    output += "\n    |       |    \n";
+
 
     if (itemsInCharacter.empty())
     {

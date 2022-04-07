@@ -5,8 +5,8 @@
 
 class Weapon : public Item{
 public:
-    Weapon(string description, int weightGrams, float value,
-           float damage, int durability);
+    Weapon(string description, int weightGrams = 1, float value = 1.0,
+           float damage = 1.0, int durability = 1);
 
 private:
     float damage;

@@ -13,17 +13,20 @@ void ZorkUL::createRooms() {
     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
 
     a = new Room("a");
-        a->addItem(new Item("x", 1, 11));
-        a->addItem(new Item("y", 2, 22));
+        a->addItem(new Item("useless coin", 1, 11));
+        a->addItem(new Item("fish", 2, 22));
     b = new Room("b");
-        b->addItem(new Item("xx", 3, 33));
-        b->addItem(new Item("yy", 4, 44));
+        b->addItem(new Item("cup of nothing", 3, 33));
+        b->addItem(new Item("vase", 4, 44));
     c = new Room("c");
-        c->addItem(new Weapon("katana", 340, 20.0, 5.0, 3));
+        c->addItem(new Weapon("katana", 340, 2, 5.0, 3));
     d = new Room("d");
     e = new Room("e");
+        e ->addItem(new Weapon("polearm", 341, 2, 5.0, 3));
     f = new Room("f");
+        f ->addItem(new Item("blank page", 4, 44));
     g = new Room("g");
+        g -> addItem(new Item("flashlight", 3, 22));
     h = new Room("h");
     i = new Room("i");
     j = new Room("j");
@@ -60,7 +63,7 @@ string ZorkUL::printEnd() {
     return "end";
 }
 string ZorkUL::printHelp() {
-    return "Valid inputs are the buttons in this window. Click on the button corresponding to the action you would like to take.";
+    return "Click on the button corresponding to the action you would like to take.";
 }
 string ZorkUL::teleport() {
     currentRoom = &rooms.at((int) rand() % rooms.size());
@@ -86,7 +89,7 @@ string ZorkUL::go(string direction) {
     Room* nextRoom = currentRoom->nextRoom(direction);
 
     if (nextRoom == NULL) {
-        return "You can't go that way.";
+        return "no room in that direction. try another way";
     } else {
         currentRoom = nextRoom;
         return currentRoom->longDescription();

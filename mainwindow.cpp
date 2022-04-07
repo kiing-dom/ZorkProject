@@ -103,7 +103,7 @@ void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem*item)
         Room r = zork->getCurrentRoom();
         addItem(r.itemsInRoom, m);
         character.removeItem(m);
-        ui->textEdit->append(QString::fromStdString(description + " has been removed from yuor inventory.\n"));
+        ui->textEdit->append(QString::fromStdString(description + " has been removed from your inventory.\n"));
     }
 }
 
@@ -164,7 +164,7 @@ void MainWindow::endGameState(string message1, string message2)
 
 void MainWindow::overencumberedTest()
 {
-    if (character.isOverencumbered(4.0))
+    if (character.isOverencumbered(200.0))
     {
         endGameState("been overencumberd", "lost");
     }
@@ -187,15 +187,24 @@ void MainWindow::goRoom(string direction)
 
             if (zork->getCurrentRoom().description == "j")
             {
+
+                ui->textEdit->append("solve the word");
+                on_lineEdit_textChanged(wordle);
                 endGameState("entered the winning Room", "won");
-            }
-        }
-    }
-    else
+                            }
+                        }
+                    }
+                    else
+                    {
+                        endGameState("you ran out of health", "you lost");
+                    }
+                        if (zork->getCurrentRoom().description == "j")
     {
-        endGameState("you ran out of health", "you lost");
-    }
+                            ui->textEdit->append("solve the word");
+                            on_lineEdit_textChanged(wordle);
+                }
 }
+
 
 void MainWindow::listItems(vector<Item> items, QString description)
 {
@@ -215,7 +224,7 @@ string MainWindow::displayStamina()
 
     for (int i = 0; i < character.stamina; i++)
     {
-        output += "[] ";
+        output += "() ";
     }
 
     return output;
@@ -227,7 +236,7 @@ string MainWindow::displayHealth()
 
     for (int i = 0; i < character.getHealth(); i++)
     {
-        output += "+ ";
+        output += "<3 ";
     }
 
     return output;
@@ -245,3 +254,34 @@ void MainWindow::printCharacterStats()
         ui->textEdit_3->setText(QString::fromStdString(displayStamina()));
     }
 }
+//wordle implementation
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+    if(attempts > 5){
+        endGameState("too many attempts", "you lost");
+    }
+    if(arg1.length() == 5){
+        string output = "your guess " + arg1.toUpper().toStdString() + "\n\n";
+        string input = arg1.toUpper().toStdString();
+        wordleWin = true;
+        for(int i = 0; i < 5; i++){
+            if(input.at(i) == word.at(i)){ //check to see if letter position is correct
+                output += "Letter " + std::to_string(i+1) + "is correct\n";
+            }else if(word.find(input.at(i)) != std::string::npos){ // checks if the letter is in the word
+                output += "Letter at Position " + std::to_string(i+1) + "is in incorrect position\n";
+                wordleWin = false;
+             }else{
+                output += "Letter at Position" + std::to_string(i+1) + "not found\n";
+                wordleWin = false;
+            }
+            if(wordleWin){
+                if(word == "ALIEN"){
+                goRoom("west");
+            }
+        }
+
+    }
+}
+}
+
